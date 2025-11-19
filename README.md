@@ -85,9 +85,9 @@ rm -rf db.tar.gz javadb.tar.gz
 ## 扫描漏洞
 
 ```bash
-# trivy fs --cache-dir /path/to/trivy-db --skip-db-update --format table --output scan_results.data .
+# trivy fs --cache-dir /path/to/trivy-db --skip-db-update --skip-java-db-update --format table --output scan_results.data .
 
-# trivy fs --cache-dir /path/to/trivy-db --skip-db-update --format template --template "@/path/to/trivy/contrib/html.tpl" --output scan_results.html .
+# trivy fs --cache-dir /path/to/trivy-db --skip-db-update --skip-java-db-update --format template --template "@/path/to/trivy/contrib/html.tpl" --output scan_results.html .
 ```
 
 - ```--template "@/path/to/trivy/contrib/template.tpl"```: 指定模板文件路径，```@``` 符号是必需的。
