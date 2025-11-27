@@ -66,8 +66,14 @@ rm -rf java-db/*
 # 下载并解压漏洞库
 oras pull ghcr.io/aquasecurity/trivy-db:2
 oras pull ghcr.io/aquasecurity/trivy-java-db:1
-tar -xzvf db.tar.gz -C db
-tar -xzvf javadb.tar.gz -C java-db
+if [ -f "db.tar.gz" ]
+then
+    tar -xzvf db.tar.gz -C db
+fi
+if [ -f "javadb.tar.gz" ]
+then
+    tar -xzvf javadb.tar.gz -C java-db
+fi
 
 # 删除压缩包
 rm -rf db.tar.gz javadb.tar.gz
